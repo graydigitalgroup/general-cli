@@ -43,6 +43,7 @@ RUN	apt-get update -y \
 	&& add-apt-repository ppa:deadsnakes/ppa -y \
 	&& apt-get update -y \
 	&& apt-get install neovim -y \
+	&& DEBIAN_FRONTEND='noninteractive' apt-get install -y --no-install-recommends python2.7 python2.7-dev && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py && python2.7 get-pip.py \
 	&& apt-get install python3.6 python3-distutils python3-pip python3-apt -y \
 	&& update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60 \
 	&& pip3 install neovim \
